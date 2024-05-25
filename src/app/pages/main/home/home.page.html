@@ -1,6 +1,22 @@
-<app-header title="Inicio"></app-header>
+<app-header [showMenu]="true" title="Inicio"></app-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card
+    color="secondary"
+    class="d-flex-center ion-text-center"
+    *ngIf="!loading && products.length"
+  ></ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addUpdateProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<!-- <ion-content [fullscreen]="true">
   <div class="ion-text-center ion-padding-top">
    <app-logo></app-logo> 
     <h1>¡Bienvenido {{ getUser().name }}!</h1>
@@ -39,4 +55,4 @@
   <div class="ion-text-center ion-padding">
     <ion-button color="primary" routerLink="/main/profile">Ir a la app</ion-button>
   </div>
-</ion-content>
+</ion-content> -->
