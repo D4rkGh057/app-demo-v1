@@ -13,9 +13,6 @@ export const environment = {
     appId: "1:693480120295:web:162ea2992a84627464a742"
   }
 };
-//CONTRASEÑA:appmoviles123
-
-
 
 /*
  * For easier debugging in development mode, you can import the following file

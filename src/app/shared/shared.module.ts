@@ -8,13 +8,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddUpdateProductComponent } from './components/add-update-product/add-update-product.component';
 
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
     LogoComponent,
     CustomInputComponent,
     AddUpdateProductComponent
-
   ],
   imports: [
     CommonModule,
@@ -22,13 +22,13 @@ import { AddUpdateProductComponent } from './components/add-update-product/add-u
     ReactiveFormsModule,
     FormsModule
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     LogoComponent,
     CustomInputComponent,
-    FormsModule,
+    AddUpdateProductComponent,
     ReactiveFormsModule,
-    AddUpdateProductComponent
+    FormsModule    
   ]
 })
 export class SharedModule { }

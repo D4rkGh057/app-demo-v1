@@ -1,6 +1,4 @@
-import { Router } from '@angular/router';
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { ModalController } from '@ionic/angular';
 import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
@@ -12,16 +10,16 @@ export class HeaderComponent  implements OnInit {
 @Input() title!:string
 @Input() isModal!:boolean
 @Input() showMenu!:boolean
-Router =inject(Router)
-modalController =inject(ModalController)
-utilsSrv=inject(UtilsService)
+@Input() backButton!:string
 
-  constructor() { }
+
+  utilsSrv = inject(UtilsService)
 
   ngOnInit() {}
 
-  dissmissModal(){
-    this.utilsSrv.dissmissModal()
+  dismissModal()
+  {
+    this.utilsSrv.dismissModal()
   }
 
 }

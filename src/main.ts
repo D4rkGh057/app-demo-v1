@@ -1,11 +1,14 @@
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+
+//PWA ELEMENTS CAPACITOR CAMERA
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-import { enableProdMode } from '@angular/core';
 
 defineCustomElements(window);
-if(environment.production){
+if (environment.production) {
   enableProdMode();
 }
 

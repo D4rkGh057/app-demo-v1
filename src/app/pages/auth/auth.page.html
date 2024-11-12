@@ -1,62 +1,58 @@
 <app-header title="App"></app-header>
 
 <ion-content [fullscreen]="true">
-  <div class="ion-text-center">
-    <form (ngSubmit)="submit()" [formGroup]="form" (keypress.enter)="submit()">
+  <div class="d-flex-center">
+    <form 
+      class="auth-form"
+      (ngSubmit)="submit()"
+      [formGroup]="form"
+      (keypres.enter)="submit()">
       <app-logo></app-logo>
       <app-custom-input
         autocomplete="email"
         icon="mail-outline"
         [control]="form.controls.email"
         type="email"
-        label="Correo"
-      ></app-custom-input>
-      <div
-        class="validators"
-        *ngIf="form.controls.email.errors && form.controls.email.touched"
+        label="Correo"  
       >
-        <div *ngIf="form.controls.email.errors?.['required']">
-          El correo es requerido
-        </div>
-        <div *ngIf="form.controls.email.errors?.['email']">
-          Ingrese un correo válido
-        </div>
+      </app-custom-input>
+      <div 
+        class="validators" 
+        *ngIf="form.controls.email.errors && form.controls.email.touched">
+        <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
+        <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo válido</div>
       </div>
       <app-custom-input
         icon="lock-closed-outline"
         [control]="form.controls.password"
         type="password"
-        label="Contraseña"
-      ></app-custom-input>
-      <div
-        class="validators"
-        *ngIf="form.controls.password.errors && form.controls.password.touched"
+        label="Contraseña"  
       >
-        <div *ngIf="form.controls.password.errors?.['required']">
-          El correo es requerido
-        </div>
-      </div>
-      <p class="ion-text-end" routerLink="forgot-password">
-        ¿Olvidaste tu contraseña?
-      </p>
-      <ion-button
+      </app-custom-input>  
+      <div 
+        class="validators" 
+        *ngIf="form.controls.password.errors && form.controls.password.touched">
+        <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
+      </div> 
+      <p
+        class="ion-text-end"
+        routerLink="forgot-password">
+        ¿Olvidaste tu contraseña?</p>
+      <ion-button 
         type="submit"
-        expand="block"
+        expand="block" 
         mode="ios"
         class="submit"
-        [disabled]="form.invalid"
-      >
+        [disabled]="form.invalid">
         Ingresar
-      </ion-button>
-      <ion-button
-        routerLink="sign-up"
-        expand="block"
+      </ion-button> 
+      <ion-button 
+        routerLink="sign-up" 
+        expand="block" 
         fill="outline"
-        mode="ios"
-        class="submit"
-      >
-        Registrarse
-      </ion-button>
+        mode="ios">
+        Regístrate
+      </ion-button>       
     </form>
   </div>
 </ion-content>

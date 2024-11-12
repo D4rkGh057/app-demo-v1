@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,31 +6,25 @@ import { FormControl } from '@angular/forms';
   templateUrl: './custom-input.component.html',
   styleUrls: ['./custom-input.component.scss'],
 })
-export class CustomInputComponent implements OnInit {
-  @Input() icon!: string;
-  @Input() type!: string;
-  @Input() label!: string;
-  @Input() autocomplete!: string;
-  @Input() control!: FormControl;
-  @Input() required!: boolean;
-
-  isPassword!: boolean;
-  hide: boolean = true;
-
-  constructor() {}
+export class CustomInputComponent  implements OnInit {
+@Input() icon!:string
+@Input() type!:string
+@Input() label!:string
+@Input() autocomplete!:string
+@Input() control!:FormControl
+@Input() required!:boolean
+isPassword!:boolean
+hide:boolean = true
+  constructor() { }
 
   ngOnInit() {
-    if (this.type == 'password') {
-      this.isPassword = true;
-    }
+    if(this.type=='password') this.isPassword=true
   }
 
-  showOrHidePassword() {
-    this.hide = !this.hide;
-    if (this.hide) {
-      this.type = 'password';
-    } else {
-      this.type = 'text';
-    }
+  showOrHidePassword()
+  {
+    this.hide = !this.hide
+    if(this.hide) this.type = 'password'
+    else this.type = 'text'
   }
 }
